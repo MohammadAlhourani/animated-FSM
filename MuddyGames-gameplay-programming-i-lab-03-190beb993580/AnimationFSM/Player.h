@@ -10,16 +10,19 @@ class Player
 private:
 	Animation m_animation;
 	AnimatedSprite Idling;
-	AnimatedSprite Swording;
+	AnimatedSprite jump;
 
 	Player();
 
 public:
-	Player(const AnimatedSprite&);
+	Player(const AnimatedSprite& , const AnimatedSprite&);
 	~Player();
 
 
 	AnimatedSprite& getAnimatedSprite(); 
+
+	bool Jump = false;
+
 	void handleInput(Input);
 	void update();
 };

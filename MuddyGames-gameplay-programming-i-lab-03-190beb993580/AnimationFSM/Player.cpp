@@ -9,7 +9,7 @@ Player::Player()
 	m_animation.setPrevious(new Idle());
 }
 
-Player::Player(const AnimatedSprite& s) : Idling(s)
+Player::Player(const AnimatedSprite& s ,  const AnimatedSprite& t) : Idling(s) , jump(t)
 {
 	m_animation.setCurrent(new Idle());
 	m_animation.setPrevious(new Idle());
@@ -19,9 +19,18 @@ Player::~Player() {}
 
 AnimatedSprite& Player::getAnimatedSprite()
 {
-	int frame = Idling.getCurrentFrame();
-	Idling.setTextureRect(Idling.getFrame(frame));
-	return Idling;
+	if (Jump == false)
+	{
+		int frame = Idling.getCurrentFrame();
+		Idling.setTextureRect(Idling.getFrame(frame));
+		return Idling;
+	}
+	else
+	{
+		int frame = jump.getCurrentFrame();
+		jump.setTextureRect(jump.getFrame(frame));
+		return jump;
+	}
 }
 
 void Player::handleInput(Input in)
@@ -30,20 +39,19 @@ void Player::handleInput(Input in)
 
 	switch (in.getCurrent())
 	{
-	case Input::Action::IDLE:
-		//std::cout << "Player Idling" << std::endl;
+	case Input::Action::IDLE:	
+		Jump = false;
 		m_animation.idle();
 		break;
-	case Input::Action::UP:
-		//std::cout << "Player Up" << std::endl;
+	case Input::Action::UP:	
 		m_animation.climbing();
 		break;
-	case Input::Action::LEFT:
-		//std::cout << "Player Left" << std::endl;
+	case Input::Action::LEFT:	
+		Jump = true;
 		m_animation.jumping();
 		break;
 	case Input::Action::RIGHT:
-		//std::cout << "Player Idling" << std::endl;
+		Jump = true;
 		m_animation.jumping();
 		break;
 	default:
@@ -53,8 +61,8 @@ void Player::handleInput(Input in)
 
 void Player::update()
 {
-	//std::cout << "Handle Update" << std::endl;
 	Idling.update();
+	jump.update();
 }
 
 
