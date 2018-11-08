@@ -42,3 +42,8 @@ void Animation::climbing()
 {
 	m_current->climbing(this);
 }
+
+void Animation::swording()
+{
+	m_current->sword(this);
+}

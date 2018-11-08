@@ -11,17 +11,22 @@ private:
 	Animation m_animation;
 	AnimatedSprite Idling;
 	AnimatedSprite jump;
+	AnimatedSprite Climb;
+	AnimatedSprite Sword;
 
 	Player();
 
 public:
-	Player(const AnimatedSprite& , const AnimatedSprite&);
+	Player(const AnimatedSprite& , const AnimatedSprite&, const AnimatedSprite&, const AnimatedSprite&);
 	~Player();
 
 
 	AnimatedSprite& getAnimatedSprite(); 
 
+	bool idle = true;
 	bool Jump = false;
+	bool climb = false;
+	bool sword = false;
 
 	void handleInput(Input);
 	void update();

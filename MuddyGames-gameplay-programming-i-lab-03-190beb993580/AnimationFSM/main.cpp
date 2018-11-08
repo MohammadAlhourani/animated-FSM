@@ -19,25 +19,41 @@ int main()
 		return EXIT_FAILURE;
 	}
 
-	// Setup Players Default Animated Sprite
-	AnimatedSprite animated_sprite(texture);
-	animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(173, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(258, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));
+	// Setup Players Default Animated Sprite idle
+	AnimatedSprite Idle(texture);
+	Idle.addFrame(sf::IntRect(3, 3, 84, 84));
+	Idle.addFrame(sf::IntRect(88, 3, 84, 84));
+	Idle.addFrame(sf::IntRect(173, 3, 84, 84));
+	Idle.addFrame(sf::IntRect(258, 3, 84, 84));
+	Idle.addFrame(sf::IntRect(343, 3, 84, 84));
+	Idle.addFrame(sf::IntRect(428, 3, 84, 84));
 
 	AnimatedSprite Jump(texture);
-	Jump.addFrame(sf::IntRect(3, 254, 84, 84));
-	Jump.addFrame(sf::IntRect(88, 254, 84, 84));
-	Jump.addFrame(sf::IntRect(173, 254, 84, 84));
-	Jump.addFrame(sf::IntRect(258, 254, 84, 84));
-	Jump.addFrame(sf::IntRect(343, 254, 84, 84));
-	Jump.addFrame(sf::IntRect(428, 254, 84, 84));
+	Jump.addFrame(sf::IntRect(3, 259, 84, 84));
+	Jump.addFrame(sf::IntRect(88, 259, 84, 84));
+	Jump.addFrame(sf::IntRect(173, 259, 84, 84));
+	Jump.addFrame(sf::IntRect(258, 259, 84, 84));
+	Jump.addFrame(sf::IntRect(343, 259, 84, 84));
+	Jump.addFrame(sf::IntRect(428, 259, 84, 84));
+
+	AnimatedSprite Climb(texture);
+	Climb.addFrame(sf::IntRect(3, 435, 84, 84));
+	Climb.addFrame(sf::IntRect(88, 435, 84, 84));
+	Climb.addFrame(sf::IntRect(173, 435, 84, 84));
+	Climb.addFrame(sf::IntRect(258, 435, 84, 84));
+	Climb.addFrame(sf::IntRect(343, 435, 84, 84));
+	Climb.addFrame(sf::IntRect(428, 435, 84, 84));
+
+	AnimatedSprite Sword(texture);
+	Sword.addFrame(sf::IntRect(3, 87, 84, 84));
+	Sword.addFrame(sf::IntRect(88, 87, 84, 84));
+	Sword.addFrame(sf::IntRect(173, 87, 84, 84));
+	Sword.addFrame(sf::IntRect(258, 87, 84, 84));
+	Sword.addFrame(sf::IntRect(343, 87, 84, 84));
+	Sword.addFrame(sf::IntRect(428, 87, 84, 84));
 
 	// Setup the Player
-	Player player(animated_sprite, Jump);
+	Player player(Idle, Jump, Climb,Sword);
 	Input input;
 	
 	// Start the game loop
@@ -65,6 +81,10 @@ int main()
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 				{
 					input.setCurrent(Input::Action::UP);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+				{
+					input.setCurrent(Input::Action::SWORD);
 				}
 				break;
 			default:
