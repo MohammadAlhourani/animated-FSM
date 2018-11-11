@@ -13,11 +13,14 @@ private:
 	AnimatedSprite jump;
 	AnimatedSprite Climb;
 	AnimatedSprite Sword;
+	AnimatedSprite Hammer;
+	AnimatedSprite Shovel;
+	AnimatedSprite Walk;
 
 	Player();
 
 public:
-	Player(const AnimatedSprite& , const AnimatedSprite&, const AnimatedSprite&, const AnimatedSprite&);
+	Player(const AnimatedSprite& , const AnimatedSprite&, const AnimatedSprite&, const AnimatedSprite&, const AnimatedSprite&, const AnimatedSprite&, const AnimatedSprite&);
 	~Player();
 
 
@@ -27,6 +30,9 @@ public:
 	bool Jump = false;
 	bool climb = false;
 	bool sword = false;
+	bool hammer = false;
+	bool shovel = false;
+	bool walk = false;
 
 	void handleInput(Input);
 	void update();
