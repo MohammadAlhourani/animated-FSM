@@ -22,42 +22,49 @@ AnimatedSprite& Player::getAnimatedSprite()
 {
 	if (idle)
 	{
+		
 		int frame = Idling.getCurrentFrame();
 		Idling.setTextureRect(Idling.getFrame(frame));
 		return Idling;
 	}
 	else if (Jump)
 	{
+		
 		int frame = jump.getCurrentFrame();
 		jump.setTextureRect(jump.getFrame(frame));
 		return jump;
 	}
 	else if (climb)
 	{
+		
 		int frame = Climb.getCurrentFrame();
 		Climb.setTextureRect(Climb.getFrame(frame));
 		return Climb;
 	}
 	else if (sword)
 	{
+		
 		int frame = Sword.getCurrentFrame();
 		Sword.setTextureRect(Sword.getFrame(frame));
 		return Sword;
 	}
 	else if(hammer)
 	{
+		
 		int frame = Hammer.getCurrentFrame();
 		Hammer.setTextureRect(Hammer.getFrame(frame));
 		return Hammer;
 	}
 	else if (shovel)
 	{
+		
 		int frame = Shovel.getCurrentFrame();
 		Shovel.setTextureRect(Shovel.getFrame(frame));
 		return Shovel;
 	}
 	else
 	{
+		
 		int frame = Walk.getCurrentFrame();
 		Walk.setTextureRect(Walk.getFrame(frame));
 		return Walk;
@@ -78,6 +85,12 @@ void Player::handleInput(Input in)
 		hammer = false;
 		shovel = false;
 		walk = false;
+		jump.resetFrame();
+		Climb.resetFrame();
+		Hammer.resetFrame();
+		Sword.resetFrame();
+		Shovel.resetFrame();
+		Walk.resetFrame();
 		m_animation.idle();
 		break;
 	case Input::Action::CLIMB:	
@@ -88,6 +101,7 @@ void Player::handleInput(Input in)
 		hammer = false;
 		shovel = false;
 		walk = false;
+		Idling.resetFrame();
 		m_animation.climbing();
 		break;
 	case Input::Action::JUMP:	
@@ -98,6 +112,7 @@ void Player::handleInput(Input in)
 		hammer = false;
 		shovel = false;
 		walk = false;
+		Idling.resetFrame();
 		m_animation.jumping();
 		break;
 	case Input::Action::HAMMER:
@@ -108,6 +123,7 @@ void Player::handleInput(Input in)
 		hammer = true;
 		shovel = false;
 		walk = false;
+		Idling.resetFrame();
 		m_animation.hammering();
 		break;
 	case Input::Action::SWORD:
@@ -118,6 +134,7 @@ void Player::handleInput(Input in)
 		hammer = false;
 		shovel = false;
 		walk = false;
+		Idling.resetFrame();
 		m_animation.swording();
 		break;
 	case Input::Action::SHOVEL:
@@ -128,6 +145,7 @@ void Player::handleInput(Input in)
 		hammer = false;
 		shovel = true;
 		walk = false;
+		Idling.resetFrame();
 		m_animation.shoveling();
 		break;
 	case Input::Action::WALK:
@@ -138,6 +156,7 @@ void Player::handleInput(Input in)
 		hammer = false;
 		shovel = false;
 		walk = true;
+		Idling.resetFrame();
 		m_animation.walking();
 		break;
 	default:

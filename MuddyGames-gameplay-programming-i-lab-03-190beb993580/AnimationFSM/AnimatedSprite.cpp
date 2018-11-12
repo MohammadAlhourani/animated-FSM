@@ -50,6 +50,11 @@ void AnimatedSprite::update(){
 	}
 }
 
+void AnimatedSprite::resetFrame()
+{
+	m_current_frame = 0;
+}
+
 
 	
 

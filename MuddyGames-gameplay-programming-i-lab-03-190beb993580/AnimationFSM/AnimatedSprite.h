@@ -24,6 +24,7 @@ public:
 	const int getCurrentFrame();
 	void update();
 
+	void resetFrame();
 	
 private:
 	Clock m_clock;
