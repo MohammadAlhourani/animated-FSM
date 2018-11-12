@@ -31,6 +31,19 @@ public:
 	{
 		DEBUG_MSG("State::Swording");
 	}
+	virtual void hammer(Animation* a)
+	{
+		DEBUG_MSG("State::Hammering");
+	}
+	virtual void shovel(Animation* a)
+	{
+		DEBUG_MSG("State::Shoveling");
+	}
+	virtual void walk(Animation* a)
+	{
+		DEBUG_MSG("State::Walking");
+	}
+
 };
 
 #endif // ! ANIMATION_H

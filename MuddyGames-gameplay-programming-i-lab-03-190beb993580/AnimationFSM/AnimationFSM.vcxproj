@@ -23,23 +23,29 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Climbing.h" />
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="Hammer.h" />
     <ClInclude Include="Idle.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Jumping.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Shovel.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Swording.h" />
+    <ClInclude Include="Walk.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Climbing.cpp" />
+    <ClCompile Include="Hammer.cpp" />
     <ClCompile Include="Idle.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Jumping.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Shovel.cpp" />
     <ClCompile Include="Swording.cpp" />
+    <ClCompile Include="Walk.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
@@ -108,12 +114,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\SFML-2.5.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <AdditionalDependencies>sfml-main.lib;sfml-audio.lib;sfml-graphics.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\SFML-2.5.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

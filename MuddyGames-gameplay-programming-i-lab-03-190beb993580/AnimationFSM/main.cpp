@@ -1,3 +1,19 @@
+
+#ifdef _DEBUG 
+#pragma comment(lib,"sfml-graphics-d.lib") 
+#pragma comment(lib,"sfml-audio-d.lib") 
+#pragma comment(lib,"sfml-system-d.lib") 
+#pragma comment(lib,"sfml-window-d.lib") 
+#pragma comment(lib,"sfml-network-d.lib") 
+#else 
+#pragma comment(lib,"sfml-graphics.lib") 
+#pragma comment(lib,"sfml-audio.lib") 
+#pragma comment(lib,"sfml-system.lib") 
+#pragma comment(lib,"sfml-window.lib") 
+#pragma comment(lib,"sfml-network.lib") 
+#endif 
+
+
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <AnimatedSprite.h>
@@ -39,28 +55,28 @@ int main()
 	Jump.addFrame(sf::IntRect(428, 259, 84, 84));
 
 	AnimatedSprite Climb(texture);
-	Climb.addFrame(sf::IntRect(3, 435, 84, 84));
-	Climb.addFrame(sf::IntRect(88, 435, 84, 84));
-	Climb.addFrame(sf::IntRect(173, 435, 84, 84));
-	Climb.addFrame(sf::IntRect(258, 435, 84, 84));
-	Climb.addFrame(sf::IntRect(343, 435, 84, 84));
-	Climb.addFrame(sf::IntRect(428, 435, 84, 84));
+	Climb.addFrame(sf::IntRect(3, 428, 84, 84));
+	Climb.addFrame(sf::IntRect(88, 428, 84, 84));
+	Climb.addFrame(sf::IntRect(173, 428, 84, 84));
+	Climb.addFrame(sf::IntRect(258, 428, 84, 84));
+	Climb.addFrame(sf::IntRect(343, 428, 84, 84));
+	Climb.addFrame(sf::IntRect(428, 428, 84, 84));
 
 	AnimatedSprite Sword(texture);
-	Sword.addFrame(sf::IntRect(3, 87, 84, 84));
-	Sword.addFrame(sf::IntRect(88, 87, 84, 84));
-	Sword.addFrame(sf::IntRect(173, 87, 84, 84));
-	Sword.addFrame(sf::IntRect(258, 87, 84, 84));
-	Sword.addFrame(sf::IntRect(343, 87, 84, 84));
-	Sword.addFrame(sf::IntRect(428, 87, 84, 84));
+	Sword.addFrame(sf::IntRect(3, 88, 84, 84));
+	Sword.addFrame(sf::IntRect(88, 88, 84, 84));
+	Sword.addFrame(sf::IntRect(173, 88, 84, 84));
+	Sword.addFrame(sf::IntRect(258, 88, 84, 84));
+	Sword.addFrame(sf::IntRect(343, 88, 84, 84));
+	Sword.addFrame(sf::IntRect(428, 88, 84, 84));
 
 	AnimatedSprite Hammer(texture);
-	Hammer.addFrame(sf::IntRect(3, 352, 84, 84));
-	Hammer.addFrame(sf::IntRect(88, 352, 84, 84));
-	Hammer.addFrame(sf::IntRect(173, 352, 84, 84));
-	Hammer.addFrame(sf::IntRect(258, 352, 84, 84));
-	Hammer.addFrame(sf::IntRect(343, 352, 84, 84));
-	Hammer.addFrame(sf::IntRect(428, 352, 84, 84));
+	Hammer.addFrame(sf::IntRect(3, 343, 84, 84));
+	Hammer.addFrame(sf::IntRect(88, 343, 84, 84));
+	Hammer.addFrame(sf::IntRect(173, 343, 84, 84));
+	Hammer.addFrame(sf::IntRect(258, 343, 84, 84));
+	Hammer.addFrame(sf::IntRect(343, 343, 84, 84));
+	Hammer.addFrame(sf::IntRect(428, 343, 84, 84));
 
 	AnimatedSprite Shovel(texture);
 	Shovel.addFrame(sf::IntRect(3, 515, 84, 84));
@@ -71,12 +87,12 @@ int main()
 	Shovel.addFrame(sf::IntRect(428, 515, 84, 84));
 
 	AnimatedSprite Walk(texture);
-	Walk.addFrame(sf::IntRect(3, 515, 84, 84));
-	Walk.addFrame(sf::IntRect(88, 515, 84, 84));
-	Walk.addFrame(sf::IntRect(173, 515, 84, 84));
-	Walk.addFrame(sf::IntRect(258, 515, 84, 84));
-	Walk.addFrame(sf::IntRect(343, 515, 84, 84));
-	Walk.addFrame(sf::IntRect(428, 515, 84, 84));
+	Walk.addFrame(sf::IntRect(3, 173, 84, 84));
+	Walk.addFrame(sf::IntRect(88, 173, 84, 84));
+	Walk.addFrame(sf::IntRect(173, 173, 84, 84));
+	Walk.addFrame(sf::IntRect(258, 173, 84, 84));
+	Walk.addFrame(sf::IntRect(343, 173, 84, 84));
+	Walk.addFrame(sf::IntRect(428, 173, 84, 84));
 
 	// Setup the Player
 	Player player(Idle, Jump, Climb, Sword, Hammer, Shovel ,Walk);
@@ -96,32 +112,32 @@ int main()
 				window.close();
 				break;
 			case sf::Event::KeyPressed:
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::F1))
 				{
 					input.setCurrent(Input::Action::JUMP);
 					timer = 0;
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F2))
 				{
 					input.setCurrent(Input::Action::HAMMER);
 					timer = 0;
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F3))
 				{
 					input.setCurrent(Input::Action::CLIMB);
 					timer = 0;
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F4))
 				{
 					input.setCurrent(Input::Action::SWORD);
 					timer = 0;
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F5))
 				{
 					input.setCurrent(Input::Action::SHOVEL);
 					timer = 0;
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F6))
 				{
 					input.setCurrent(Input::Action::WALK);
 					timer = 0;
@@ -136,7 +152,8 @@ int main()
 		{
 			timer++;
 		}
-		else if (timer >= 300)
+
+		if (timer >= 3600)
 		{
 			input.setCurrent(Input::Action::IDLE);
 		}

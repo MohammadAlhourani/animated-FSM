@@ -75,6 +75,15 @@
     <ClInclude Include="Swording.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
+    <ClInclude Include="Hammer.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="Shovel.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="Walk.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -102,6 +111,15 @@
       <Filter>Source Files\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="Swording.cpp">
+      <Filter>Source Files\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="Hammer.cpp">
+      <Filter>Source Files\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="Shovel.cpp">
+      <Filter>Source Files\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="Walk.cpp">
       <Filter>Source Files\FSM</Filter>
     </ClCompile>
   </ItemGroup>

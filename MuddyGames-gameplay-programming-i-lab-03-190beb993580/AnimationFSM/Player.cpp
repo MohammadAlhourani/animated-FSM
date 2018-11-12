@@ -108,7 +108,7 @@ void Player::handleInput(Input in)
 		hammer = true;
 		shovel = false;
 		walk = false;
-	//	m_animation.();
+		m_animation.hammering();
 		break;
 	case Input::Action::SWORD:
 		idle = false;
@@ -128,7 +128,7 @@ void Player::handleInput(Input in)
 		hammer = false;
 		shovel = true;
 		walk = false;
-		//m_animation.();
+		m_animation.shoveling();
 		break;
 	case Input::Action::WALK:
 		idle = false;
@@ -138,7 +138,7 @@ void Player::handleInput(Input in)
 		hammer = false;
 		shovel = false;
 		walk = true;
-		//m_animation.();
+		m_animation.walking();
 		break;
 	default:
 		break;

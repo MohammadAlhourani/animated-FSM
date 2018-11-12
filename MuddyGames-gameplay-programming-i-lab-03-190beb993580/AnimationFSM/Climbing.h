@@ -12,4 +12,4 @@ public:
 	void jumping(Animation* a);
 };
 
-#endif // !IDLE_H
+#endif // !Climbing_H
